@@ -1,0 +1,30 @@
+{
+  "name": "khoros-react-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "bulid:dev": "esbuild src/main.tsx --bundle --watch --outdir=dist",
+    "serve": "http-server .",
+    "dev": "concurrently \"npm run bulid:dev\" \"npm run serve\" ",
+    "build": "esbuild src/main.tsx --bundle --minify --outdir=dist",
+    "postbuild": "node scripts/build-for-khoros.cjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "clipboard": "^2.0.11",
+    "clipboardy": "^3.0.0",
+    "concurrently": "^7.6.0",
+    "esbuild": "^0.17.10",
+    "http-server": "^14.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}
